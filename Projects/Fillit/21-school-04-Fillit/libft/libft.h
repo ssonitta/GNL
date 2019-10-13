@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lronnet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: kchaozu <kchaozu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 18:46:54 by lronnet           #+#    #+#             */
-/*   Updated: 2019/09/27 19:24:00 by lronnet          ###   ########.fr       */
+/*   Updated: 2019/10/13 15:05:36 by kchaozu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,8 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_tolower(int c);
 int					ft_isupper(int c);
 size_t				ft_mathfact(int n);
-void				ft_arrinsnsort(size_t *arr, size_t n, int (*f)(ssize_t, ssize_t));
+void				ft_arrinsnsort(size_t *arr, size_t n,
+					int (*f)(ssize_t, ssize_t));
 int					ft_compasc(ssize_t n1, ssize_t n2);
 void				ft_swap (ssize_t *n1, ssize_t *n2);
 double				ft_mathsqrt(int n);

@@ -6,7 +6,7 @@
 /*   By: kchaozu <kchaozu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 16:48:36 by lronnet           #+#    #+#             */
-/*   Updated: 2019/10/13 14:00:57 by kchaozu          ###   ########.fr       */
+/*   Updated: 2019/10/13 15:07:03 by kchaozu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include "fillit.h"
 #include "libft/libft.h"
 
-static void		init_vars(int *x, int *y, int *curr_fig, int *fig_on_field_cnt)
+static void		init_vars(int *x, int *y, int *curr_fig,
+int *fig_on_field_cnt)
 {
 	*x = 0;
 	*y = 0;
@@ -29,7 +30,8 @@ static void		init_vars(int *x, int *y, int *curr_fig, int *fig_on_field_cnt)
 ** Изменяет координаты вставки неподошедшей фигуры.
 */
 
-static int		try_another_position(int *x, int *y, int *curr_fig, int *fig_on_field_cnt)
+static int		try_another_position(int *x, int *y, int *curr_fig,
+int *fig_on_field_cnt)
 {
 	*curr_fig = *fig_on_field_cnt;
 	if (*x < g_field_size - ((t_figure *)g_fig_links_arr[*curr_fig])->width)
@@ -57,7 +59,8 @@ static int		try_another_position(int *x, int *y, int *curr_fig, int *fig_on_fiel
 ** Размещение фигуры на поле.
 */
 
-static int		place_this_figure(int *x, int y, int *curr_fig, int *fig_on_field_cnt)
+static int		place_this_figure(int *x, int y, int *curr_fig,
+int *fig_on_field_cnt)
 {
 	place_figure(*x, y, (t_figure *)g_fig_links_arr[*curr_fig]);
 	*x += ((t_figure *)g_fig_links_arr[*curr_fig])->width - 1;
@@ -91,7 +94,8 @@ static char		**try_better_field(int transp_cnt)
 				if (!place_this_figure(&x, y, &curr_fig, &fig_on_field_cnt))
 					return (g_field);
 			}
-			else if (!try_another_position(&x, &y, &curr_fig, &fig_on_field_cnt))
+			else if (!try_another_position(&x, &y,
+			&curr_fig, &fig_on_field_cnt))
 				break ;
 		}
 		arr_next_transposition();
